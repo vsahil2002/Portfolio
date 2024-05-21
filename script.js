@@ -133,13 +133,14 @@ function onClickEarlybird() {
   );
 }
 
-function onClickLinkedin(){
-  window.open(
-    "https://www.linkedin.com/in/sahil-vasoya-08196b259/",
-    "_blank"
-  );
+function onClickLinkedin() {
+  window.open("https://www.linkedin.com/in/sahil-vasoya-08196b259/", "_blank");
 }
 
 function onClickInsta() {
   window.open("https://www.instagram.com/sahil_v2608/", "_blank");
+}
+
+function onClickBb() {
+  window.open("https://admin.dev.battlebuddies.app/login", "_blank");
 }
