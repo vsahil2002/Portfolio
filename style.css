@@ -357,26 +357,29 @@ h3{
 }
 
 /* ----- PROJECTS BOX ----- */
-.project-container{
+.project-container {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
-.project-box{
+
+.project-box {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 30%;
+    width: calc(33.33% - 20px); /* Adjust for 3 items per row with a 20px gap */
     height: 250px;
     background: var(--color-white);
     border-radius: 20px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     overflow: hidden;
+    margin-bottom: 15px; /* Ensure consistent vertical spacing */
 }
+
 .project-box img {
     width: 50px;
     height: 50px;
