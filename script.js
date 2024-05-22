@@ -42,9 +42,9 @@ function headerShadow() {
 let typingEffect = new Typed(".typedText", {
   strings: ["Freelancer", "Native Developer", "Web Developer"],
   loop: true,
-  typeSpeed: 100,
-  backSpeed: 80,
-  backDelay: 2000,
+  typeSpeed: 150,
+  backSpeed: 100,
+  backDelay: 1000,
 });
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
