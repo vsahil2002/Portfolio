@@ -144,3 +144,93 @@ function onClickInsta() {
 function onClickBb() {
   window.open("https://admin.dev.battlebuddies.app/login", "_blank");
 }
+
+function showToast(message, type) {
+  // Create a new div element for the toast
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.textContent = message;
+
+  // Add a class based on the message type
+  if (type === "success") {
+    toast.classList.add("toast-success");
+  } else if (type === "warning") {
+    toast.classList.add("toast-warning");
+  }
+
+  // Append the toast to the body
+  document.body.appendChild(toast);
+
+  // Remove the toast after 3 seconds (3000 milliseconds)
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+function sendMessage() {
+  const name = document.getElementById("Name");
+  const email = document.getElementById("Email");
+  const message = document.getElementById("Message");
+
+  let valid = true;
+
+  if (!name.value) {
+    name.classList.add("error-border");
+    valid = false;
+  } else {
+    name.classList.remove("error-border");
+  }
+
+  if (!email.value) {
+    email.classList.add("error-border");
+    valid = false;
+  } else {
+    email.classList.remove("error-border");
+  }
+
+  if (!message.value) {
+    message.classList.add("error-border");
+    valid = false;
+  } else {
+    message.classList.remove("error-border");
+  }
+
+  if (valid) {
+    fetch("https://backendportfolio-blue.vercel.app/api/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        showToast("Message sent successfully!", "success");
+        name.value = "";
+        email.value = "";
+        message.value = "";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        showToast("Something went wrong please try again later", "warning");
+      });
+  } else {
+    showToast("Please fill all fields", "warning");
+  }
+}
+
+document.getElementById("Name").addEventListener("input", function () {
+  this.classList.remove("error-border");
+});
+
+document.getElementById("Email").addEventListener("input", function () {
+  this.classList.remove("error-border");
+});
+
+document.getElementById("Message").addEventListener("input", function () {
+  this.classList.remove("error-border");
+});

@@ -550,6 +550,63 @@ footer{
     margin-top: 10px;
 }
 
+.error-border {
+    border: 2px solid red;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+.error-border + .error-message {
+    display: block;
+}
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* ----- Toast Notification ----- */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 9999;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  .toast-success {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .toast-warning {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){
@@ -640,6 +697,9 @@ footer{
     }
 
 }
+
+
+
 
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
