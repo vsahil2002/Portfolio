@@ -167,7 +167,20 @@ function showToast(message, type) {
   }, 3000);
 }
 
+function showSendingToast(message) {
+  // Create a new div element for the toast
+  const toast = document.createElement("div");
+  toast.classList.add("toast");
+  toast.textContent = message;
+
+  toast.classList.add("toast-success");
+
+  // Append the toast to the body
+  document.body.appendChild(toast);
+}
+
 function sendMessage() {
+  const toast = document.createElement("div");
   const name = document.getElementById("Name");
   const email = document.getElementById("Email");
   const message = document.getElementById("Message");
@@ -196,6 +209,7 @@ function sendMessage() {
   }
 
   if (valid) {
+    showSendingToast("sending....");
     fetch("https://backendportfolio-blue.vercel.app/api/message", {
       method: "POST",
       headers: {
@@ -209,6 +223,7 @@ function sendMessage() {
     })
       .then((response) => response.json())
       .then((data) => {
+        toast.remove();
         showToast("Message sent successfully!", "success");
         name.value = "";
         email.value = "";
