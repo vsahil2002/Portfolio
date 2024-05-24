@@ -231,10 +231,10 @@ function sendMessage() {
       })
       .catch((error) => {
         console.error("Error:", error);
-        showToast("Something went wrong please try again later", "warning");
+        showToast("Something went wrong please try again later", false);
       });
   } else {
-    showToast("Please fill all fields", "warning");
+    showToast("Please fill all fields", false);
   }
 }
 
