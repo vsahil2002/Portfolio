@@ -152,9 +152,9 @@ function showToast(message, type) {
   toast.textContent = message;
 
   // Add a class based on the message type
-  if (type === "success") {
+  if (type === true) {
     toast.classList.add("toast-success");
-  } else if (type === "warning") {
+  } else if (type === false) {
     toast.classList.add("toast-warning");
   }
 
@@ -224,7 +224,7 @@ function sendMessage() {
       .then((response) => response.json())
       .then((data) => {
         toast.remove();
-        showToast("Message sent successfully!", "success");
+        showToast(data.message, data.success);
         name.value = "";
         email.value = "";
         message.value = "";
