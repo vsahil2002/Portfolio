@@ -219,6 +219,7 @@ function sendMessage() {
         name: name.value,
         email: email.value,
         message: message.value,
+        isFromVarship: false,
       }),
     })
       .then((response) => response.json())
