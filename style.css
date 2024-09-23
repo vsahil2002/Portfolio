@@ -719,16 +719,3 @@ footer{
 }
 
 
-/* Sticky header styles */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure it stays above other content */
-    background-color: #fff; /* You can adjust the color to your liking */
-    box-shadow: 0 4px 2px -2px gray; /* Optional: Adds a shadow effect */
-}
-
-.sticky + .wrapper {
-    padding-top: 60px; /* Adjust based on your header height to prevent content overlap */
-}
