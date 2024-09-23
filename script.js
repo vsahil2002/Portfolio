@@ -12,7 +12,7 @@ function myMenuFunction() {
 /* ----- DOWNLOAD RESUME -----*/
 function downloadPDF() {
   const link = document.createElement("a");
-  link.href = "sahilresume1.pdf"; // Path to your PDF file
+  link.href = "sahilv_resume.pdf"; // Path to your PDF file
   link.download = "sahilresume.pdf"; // Name of the file to be downloaded
   document.body.appendChild(link);
   link.click();
