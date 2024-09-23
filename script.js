@@ -250,3 +250,24 @@ document.getElementById("Email").addEventListener("input", function () {
 document.getElementById("Message").addEventListener("input", function () {
   this.classList.remove("error-border");
 });
+
+
+// Get the header
+const header = document.getElementById('header');
+
+// Get the offset position of the header
+const sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove it when you leave the scroll position
+function stickyHeader() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+}
+
+// When the user scrolls the page, execute stickyHeader
+window.onscroll = function() {
+  stickyHeader();
+};
