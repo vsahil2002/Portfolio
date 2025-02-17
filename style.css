@@ -386,6 +386,13 @@ h3{
     margin-bottom: 10px;
   }
 
+  .bar-hoppin-img {
+    width: 250px;  
+    height: 50px;  
+    /* object-fit: cover;   */
+    /* border-radius: 8px; */
+}
+
   .project-box:nth-of-type(2) img {
     width: 100px;
     height: 100px;

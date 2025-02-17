@@ -12,8 +12,8 @@ function myMenuFunction() {
 /* ----- DOWNLOAD RESUME -----*/
 function downloadPDF() {
   const link = document.createElement("a");
-  link.href = "sahil.vasoya.pdf"; // Path to your PDF file
-  link.download = "sahil.vasoya.pdf"; // Name of the file to be downloaded
+  link.href = "sahil-vasoya.pdf"; // Path to your PDF file
+  link.download = "sahil-vasoya.pdf"; // Name of the file to be downloaded
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
