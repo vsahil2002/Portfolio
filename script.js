@@ -145,6 +145,10 @@ function onClickBb() {
   window.open("https://admin.dev.battlebuddies.app/login", "_blank");
 }
 
+function onClickLaraa() {
+  window.open("https://laara-kagms86in-ashva.vercel.app/", "_blank");
+}
+
 function showToast(message, type) {
   // Create a new div element for the toast
   const toast = document.createElement("div");

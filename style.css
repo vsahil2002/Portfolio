@@ -403,6 +403,10 @@ h3{
     height: 75px;
   }
 
+  .project-box img[src="./cafm.png"] {
+    width: 230px;
+    height: 100px;
+  }
 
 .project-box>i{
     font-size: 50px;
